@@ -1,0 +1,21 @@
+body {
+  background-color: #21222d;
+}
+
+.theme-text-first-dark {
+  color: #8c8c8c;
+}
+
+.theme-text-second-dark {
+  color: #fff;
+}
+.theme-first-dark {
+  background-color: #2c2c37;
+}
+.theme-second-dark {
+  background-color: #21222d;
+}
+.theme-select-dark {
+  background-color: #2c2c37 !important;
+  color: #fff;
+}

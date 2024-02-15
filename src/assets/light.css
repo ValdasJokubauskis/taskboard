@@ -1,0 +1,17 @@
+.theme-text-first-light {
+  color: #787878;
+}
+
+.theme-text-second-light {
+  color: #000;
+}
+.theme-first-light {
+  background-color: #fff;
+}
+.theme-second-light {
+  background-color: #e8f0fb;
+}
+.theme-select-light {
+  background-color: #fff !important;
+  color: #000;
+}

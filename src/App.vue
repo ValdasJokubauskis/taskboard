@@ -1,26 +1,44 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <Navigation />
 </template>
 
-<script>
-import HelloWorld from './components/HelloWorld.vue'
+<script setup>
+import Navigation from "./components/Navigation.vue";
+import { watchEffect } from "vue";
+import { useBoards } from "./components/boards";
 
-export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+const boardsStore = useBoards();
+
+watchEffect(() => {
+  import(`./assets/${boardsStore.settings.theme}.css`);
+});
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.v-enter-active,
+.v-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.v-enter-from,
+.v-leave-to {
+  opacity: 0;
+}
+.list-group-item,
+.dropdown-item {
+  cursor: pointer;
+}
+.notice {
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  color: rgba(255, 0, 0, 0.5);
+}
+.my-modal-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
 }
 </style>
